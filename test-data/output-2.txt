@@ -1,0 +1,1 @@
+Available commands: [EXIT, GT4500, HELP, TORPEDO] Generally, commands receive parameters; refer to the documentation Before firing torpedoes using the TORPEDO command, you must initialize a ship (eg. a GT4500) using its name as a command
