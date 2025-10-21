@@ -3,6 +3,9 @@ package hu.bme.mit.spaceship;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -95,7 +98,9 @@ public class CommandLineInterface {
      * Handle the HELP command.
      */
     private static CommandResult handleHelp(Context ctx, String[] params) {
-        ctx.out.println("Available commands: " + handlers.keySet());
+        List<String> sortedCommands = new ArrayList<>(handlers.keySet());
+        Collections.sort(sortedCommands);
+        ctx.out.println("Available commands: " + sortedCommands);
         ctx.out.println("Generally, commands receive parameters; refer to the documentation");
         ctx.out.println(
                 "Before firing torpedoes using the TORPEDO command, you must initialize a ship (eg. a GT4500) using its name as a command");
